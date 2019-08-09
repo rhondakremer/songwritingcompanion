@@ -56,9 +56,7 @@ body {
 
 #track, #artist {
     background-color: aqua;
-    height: 1.5em;
-    width: 8em;
-    font-size: 4em;
+    
 }
 
 input {
