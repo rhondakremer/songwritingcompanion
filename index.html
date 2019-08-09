@@ -20,7 +20,7 @@
         <h1>dataBass</h1>
         <h2>dataBass will help you write your lyrics</h2>
 
-        <h4>Insert your text below for an emotion analysis</h4>
+        <h4>Write your text and check below to emotionally analyze your writing</h4>
 
 
         <div class="row">
@@ -33,31 +33,33 @@
                 </div>
             </div>
 
-            <div class="col-2">
-                <p>Click to get an emotional analysis of your text! (results below)</p>
-                <div class="centered"><button id="analyzeText">Analyze</button></div>
-                <p>You can also analyze a song of your choice by using our search boxes below!</p>
-            </div>
 
 
 
-            <div class="col-4 bordered">
+
+            <div class="col-6 bordered">
                 <h5>
                     <h5>Need help finding different words or rhymes to make certain emotional attributes of your text to
                         increase?</h5>
-                    <h6>Try searching for helpful synonyms and rhymes below</h6>
+                    <h6 class="centered">Try searching for helpful synonyms, rhymes, and adjectives below</h6>
                 </h5>
-                <input id="wordInput" placeholder="Type something"><br>
-                <div class="row">
-                    <div class="col-6">
+                <div class="centered"><input id="wordInput" placeholder="Type something"></div><br>
+                <div class="row centered">
+                    <div class="col-4">
                         <button id="synonymsButton">Find Synonyms</button><br>
                         <div id="synonyms"></div>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-4">
                         <button id="rhymingButton">Find Rhymes</button><br>
                         <div id="rhymingWords"></div>
                     </div>
+
+                    <div class="col-4">
+                        <button id="adjectivesButton">Find Adjectives</button><br>
+                        <div id="adjectives"></div>
+                    </div>
+
 
                 </div>
             </div>
@@ -67,25 +69,25 @@
 
         <div class="row">
 
-
-            <div id="graphDisplay" class="col-7">
-                <canvas id="myChart" style="height:15em"></canvas>
+            <div class="col-2 offset-1" id="analysisPrompt">
+                <p>Click to get an emotional analysis of your text!</p>
+                <div class="centered"><button id="analyzeText">Analyze</button></div>
+                <p>You can also analyze a song of your choice and compare by using our search boxes below!</p>
             </div>
 
+            <div id="graphDisplay" class="col-6 offset-1">
+                <div id="graphDisplayWords">Your emotion mapping will display here!</div>
+                <canvas id="myChart" style="height:10em"></canvas>
+            </div>
 
-            <div id="userLyricsAnalysis" class="col-2"></div>
+            <div id="userLyricsAnalysis" class="col-2">There will be things here!</div>
         </div>
 
 
 
-
-
-
-
-
         <div class="row">
-            <div class="col-2">
-                <h4>Type in a song to analyze those lyrics and compare to your own!</h4>>
+            <div class="col-4" id="lyricSpot">
+                <h5>Type in a song to analyze those lyrics and compare to your own!</h5>
                 <input type="text" placeholder="Track Name" id="track">
                 <input type="text" placeholder="Artist Name (optional)" id="artist">
 
@@ -97,56 +99,53 @@
                     <div id="lyricsDisplay"></div>
                 </div>
             </div>
-            <div class="col-7">
 
-                <div id="graphDisplay">
-                    <canvas id="myChart1" style="height:15em"></canvas>
-                </div>
 
+            <div id="graphDisplay" class="col-6">
+                <canvas id="myChart1" style="height:10em"></canvas>
             </div>
 
-            <div class="col-2">
 
-                <div id="emotionsScore"></div>
-
-
-            </div>
-
+            <div id="emotionsScore" class="col-2"></div>
 
 
         </div>
 
 
 
+    </div>
 
 
 
 
 
-        <!-- Optional JavaScript -->
 
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
 
-        <div id="myModal1" class="modal">
-            <div class="modal-content">
-                <span class="close">x</span>
-                <p>Please enter a value</p>
-            </div>
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <div id="myModal1" class="modal">
+        <div class="modal-content">
+            <span class="close">x</span>
+            <p>Please enter a value</p>
         </div>
+    </div>
 
-        <div id="myModal2" class="modal">
-            <div class="modal-content">
-                <span class="close">x</span>
-                <p>Please check your spelling!</p>
-            </div>
+    <div id="myModal2" class="modal">
+        <div class="modal-content">
+            <span class="close">x</span>
+            <p>Please check your spelling!</p>
         </div>
+    </div>
     </div>
 </body>
 

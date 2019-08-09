@@ -5,7 +5,7 @@ body {
 
 #userText {
     width: 100%;
-    height: 400px;
+    height: 450px;
 }
 
 #wordInput {
@@ -64,6 +64,14 @@ input {
     text-align: center;
 }
 
+#userLyricsAnalysis {
+    padding-top: 130px;
+}
+
+#emotionsScore {
+    padding-top: 130px;
+}
+
 #graphDisplay {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 1em;
@@ -75,4 +83,18 @@ input {
   
   #mychart {
     display: inherit;
+  }
+
+  #lyricsDisplay {
+    white-space: pre;
+    overflow-y: scroll;
+    height: 20em;
+  }
+
+  #lyricSpot {
+      padding-top: 50px;
+  }
+
+  #analysisPrompt {
+      margin-top: 10%;
   }

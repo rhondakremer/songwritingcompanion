@@ -5,11 +5,11 @@ $(document).ready(function () {
 
 
     $("#analyzeText").click(function () {
-
+        $("#graphDisplayWords").empty();
         var lyricsText = $("#userText").val();
         console.log(lyricsText);
         var queryURL = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/";
-
+        
 
         $.ajax({
             url: queryURL,
@@ -278,7 +278,25 @@ $(document).ready(function () {
             
     }
     
+    function adjectivesFinder() {
+        var inputtedWord = $("#wordInput").val();
+        console.log(inputtedWord)
+        var queryURL = "https://api.datamuse.com/words?rel_jjb=" + inputtedWord;
+        //$("#wordInput").val("");
+
+        $.ajax({
+            url: queryURL,
+            method: "GET",
     
+    
+        }).then(function (response) {
+            for (let i = 0; i < 10; i++) {
+            //console.log(response[i].word);
+            $("#adjectives").append(response[i].word + " <br>")   
+        }      
+        });
+        
+}
     
     
     
@@ -294,6 +312,12 @@ $(document).ready(function () {
         rhymingWordsFinder()
         $("#rhymingWords").empty();
     });
+
+    $("#adjectivesButton").click(function () {
+        $("#adjectives").empty();
+        adjectivesFinder();
+    });
+    
 
 
     //Logic for modal
