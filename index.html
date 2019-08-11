@@ -28,22 +28,14 @@
 
             <div class="col-4 offset-1">
                 <div id="userTextbox">
-
-                    <textarea type="text" placeholder="type your lyrics here" id="userText"></textarea>
-
+                    <textarea type="text" placeholder="Type your lyrics here" id="userText"></textarea>
                 </div>
             </div>
 
 
-
-
-
             <div class="col-6 bordered" id="wordFinderDiv">
-                <h5>
-                    <h5>Need help finding different words or rhymes to make certain emotional attributes of your text to
-                        increase?</h5>
+                    <h5 class="centered topSpace">Need help finding the right words?</h5>
                     <h6 class="centered">Try searching for helpful synonyms, rhymes, and adjectives below</h6>
-                </h5>
                 <div class="centered"><input id="wordInput" placeholder="Search a word"></div><br>
                 <div class="row centered">
                     <div class="col-4">
@@ -71,13 +63,13 @@
         <div class="row">
 
             <div class="col-3" id="analysisPrompt">
-                <h5>Click below to get an emotional analysis of your text!</h5>
+                <h5 class="withSpace">Click below to get an emotional analysis of your text!</h5>
                 <div class="centered"><button id="analyzeText">Analyze</button></div>
-                <h5>Continue scrolling to analyze a song of your choice and compare by using our search boxes below!</h5>
+                <h5 class="withSpace">Continue scrolling to analyze a song of your choice and compare by using our search boxes below!</h5>
             </div>
 
             <div id="graphDisplay" class="col-6">
-                <div id="graphDisplayWords">Your emotion mapping will display here!</div>
+                <div class="graphDisplayWords" id="graphWords">Click Analyze to display your emotional analysis graph here!</div>
                 <canvas id="myChart" style="height:10em"></canvas>
             </div>
 
@@ -88,7 +80,7 @@
 
         <div class="row">
             <div class="col-3" id="lyricSpot">
-                <h5>Search a song to analyze its lyrics and compare to your own!</h5>
+                <h5 class="withSpace">Search a song to analyze its lyrics and compare to your own!</h5>
                 <div id="songInputs">
                 <input type="text" placeholder="Track Name" id="track">
                 <input type="text" placeholder="Artist Name (optional)" id="artist">
@@ -104,11 +96,12 @@
 
 
             <div id="graphDisplay" class="col-6">
+                    <div class="graphDisplayWords" id="graphWords2">Click Analyze to display your selected song's emotional analysis graph here!</div>
                 <canvas id="myChart1" style="height:10em"></canvas>
             </div>
 
 
-            <div id="emotionsScore" class="col-2 offset-1 smallerLeftMargin"><p>There will also be text here!</p></div>
+            <div id="emotionsScore" class="col-2 offset-1 smallerLeftMargin"><p>Click Analyze to get your selected song's emotion results displayed here!</p></div>
 
 
         </div>

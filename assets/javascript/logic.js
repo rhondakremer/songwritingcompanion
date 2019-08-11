@@ -5,11 +5,13 @@ $(document).ready(function () {
 
 
     $("#analyzeText").click(function () {
-        $("#graphDisplayWords").empty();
+        $("#graphWords").empty();
         var lyricsText = $("#userText").val();
         console.log(lyricsText);
         var queryURL = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/";
-        
+        if (lyricsText == "") {
+            $("#myModal1").css("display", "block");
+        } else {
 
         $.ajax({
             url: queryURL,
@@ -88,6 +90,7 @@ $(document).ready(function () {
             $("#userLyricsAnalysis").append("Sadness level: " + sadness + "%" + "</br></br>")
 
         });
+    }
     });
 
 
@@ -100,7 +103,7 @@ $(document).ready(function () {
         console.log(track);
         $("#trackInfo").empty();
         $("#emotionsScore").empty();
-    
+
         if (track == "") {
             $("#myModal1").css("display", "block");
         } else {
@@ -146,14 +149,16 @@ $(document).ready(function () {
         }
     });
 
-    
+
 
     $("#analyze").click(function () {
-
+        $("#graphWords2").empty();
         var lyricsText = $("#lyricsDisplay").text();
         console.log(lyricsText);
         var queryURL = "https://twinword-emotion-analysis-v1.p.rapidapi.com/analyze/";
-
+        if (lyricsText == "") {
+            $("#myModal1").css("display", "block");
+        } else {
 
         $.ajax({
             url: queryURL,
@@ -219,7 +224,7 @@ $(document).ready(function () {
                     }
                 }
             });
-        
+
 
             $("#emotionsScore").html("Anger level: " + Math.floor(anger) + "%" + "</br></br>")
             $("#emotionsScore").append("Joy level: " + Math.floor(joy) + "%" + "</br></br>")
@@ -235,80 +240,107 @@ $(document).ready(function () {
         });
 
 
-
+    }
     });
-    
+
 
     function rhymingWordsFinder() {
         var inputtedWord = $("#wordInput").val();
         console.log(inputtedWord)
         var queryURL = "https://api.datamuse.com/words?rel_rhy=" + inputtedWord;
         //$("#wordInput").val("");
-    
-        $.ajax({
-            url: queryURL,
-            method: "GET",
-    
-    
-        }).then(function (response) {
-            for (let i = 0; i < 10; i++) {
-            //console.log(response[i].word);
-            $("#rhymingWords").append(response[i].word + " <br>")   
-        }      
-        });
-        }  
-    
-    function synonymFinder() {
-            var inputtedWord = $("#wordInput").val();
-            console.log(inputtedWord)
-            var queryURL = "https://api.datamuse.com/words?ml=" + inputtedWord;
-            //$("#wordInput").val("");
+        if (inputtedWord == "") {
+            $("#myModal1").css("display", "block");
+        } else {
 
             $.ajax({
                 url: queryURL,
                 method: "GET",
-        
-        
+
+
             }).then(function (response) {
+
+                if (response.length == 0) {
+                        $("#myModal2").css("display", "block");
+                    } else {
+                
+
                 for (let i = 0; i < 10; i++) {
-                //console.log(response[i].word);
-                $("#synonyms").append(response[i].word + " <br>")   
-            }      
+                    //console.log(response[i].word);
+                    $("#rhymingWords").append(response[i].word + " <br>")
+                }
+            }
             });
-            
+        }
     }
-    
+
+    function synonymFinder() {
+        var inputtedWord = $("#wordInput").val();
+        console.log(inputtedWord)
+        var queryURL = "https://api.datamuse.com/words?ml=" + inputtedWord;
+        //$("#wordInput").val("");
+        if (inputtedWord == "") {
+            $("#myModal1").css("display", "block");
+        } else {
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+
+
+        }).then(function (response) {
+
+            if (response.length == 0) {
+                $("#myModal2").css("display", "block");
+            } else {
+
+            for (let i = 0; i < 10; i++) {
+                //console.log(response[i].word);
+                $("#synonyms").append(response[i].word + " <br>")
+            }
+        }
+        });
+    }
+    }
+
     function adjectivesFinder() {
         var inputtedWord = $("#wordInput").val();
         console.log(inputtedWord)
         var queryURL = "https://api.datamuse.com/words?rel_jjb=" + inputtedWord;
         //$("#wordInput").val("");
-
+        if (inputtedWord == "") {
+            $("#myModal1").css("display", "block");
+        } else {
         $.ajax({
             url: queryURL,
             method: "GET",
-    
-    
+
+
         }).then(function (response) {
+
+            if (response.length == 0) {
+                $("#myModal2").css("display", "block");
+            } else {
+
             for (let i = 0; i < 10; i++) {
-            //console.log(response[i].word);
-            $("#adjectives").append(response[i].word + " <br>")   
-        }      
+                //console.log(response[i].word);
+                $("#adjectives").append(response[i].word + " <br>")
+            }
+        }
         });
-        
-}
-    
-    
-    
-    
-    
+    }
+    }
+
+
+
+
+
     $("#synonymsButton").click(function () {
         $("#synonyms").empty();
         synonymFinder();
     });
-    
+
     $("#rhymingButton").click(function () {
-        
+
         rhymingWordsFinder()
         $("#rhymingWords").empty();
     });
@@ -317,7 +349,7 @@ $(document).ready(function () {
         $("#adjectives").empty();
         adjectivesFinder();
     });
-    
+
 
 
     //Logic for modal
