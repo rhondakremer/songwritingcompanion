@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Blinker|Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -37,27 +38,27 @@
 
 
 
-            <div class="col-6 bordered">
+            <div class="col-6 bordered" id="wordFinderDiv">
                 <h5>
                     <h5>Need help finding different words or rhymes to make certain emotional attributes of your text to
                         increase?</h5>
                     <h6 class="centered">Try searching for helpful synonyms, rhymes, and adjectives below</h6>
                 </h5>
-                <div class="centered"><input id="wordInput" placeholder="Type something"></div><br>
+                <div class="centered"><input id="wordInput" placeholder="Search a word"></div><br>
                 <div class="row centered">
                     <div class="col-4">
                         <button id="synonymsButton">Find Synonyms</button><br>
-                        <div id="synonyms"></div>
+                        <div id="synonyms" class="topSpace"></div>
                     </div>
 
                     <div class="col-4">
                         <button id="rhymingButton">Find Rhymes</button><br>
-                        <div id="rhymingWords"></div>
+                        <div id="rhymingWords" class="topSpace"></div>
                     </div>
 
                     <div class="col-4">
                         <button id="adjectivesButton">Find Adjectives</button><br>
-                        <div id="adjectives"></div>
+                        <div id="adjectives" class="topSpace"></div>
                     </div>
 
 
@@ -69,28 +70,29 @@
 
         <div class="row">
 
-            <div class="col-2 offset-1" id="analysisPrompt">
-                <p>Click to get an emotional analysis of your text!</p>
+            <div class="col-3" id="analysisPrompt">
+                <h5>Click below to get an emotional analysis of your text!</h5>
                 <div class="centered"><button id="analyzeText">Analyze</button></div>
-                <p>You can also analyze a song of your choice and compare by using our search boxes below!</p>
+                <h5>Continue scrolling to analyze a song of your choice and compare by using our search boxes below!</h5>
             </div>
 
-            <div id="graphDisplay" class="col-6 offset-1">
+            <div id="graphDisplay" class="col-6">
                 <div id="graphDisplayWords">Your emotion mapping will display here!</div>
                 <canvas id="myChart" style="height:10em"></canvas>
             </div>
 
-            <div id="userLyricsAnalysis" class="col-2">There will be things here!</div>
+            <div id="userLyricsAnalysis" class="col-2 offset-1 smallerLeftMargin"><p>Click Analyze to get your emotion results displayed here!</p></div>
         </div>
 
 
 
         <div class="row">
-            <div class="col-4" id="lyricSpot">
-                <h5>Type in a song to analyze those lyrics and compare to your own!</h5>
+            <div class="col-3" id="lyricSpot">
+                <h5>Search a song to analyze its lyrics and compare to your own!</h5>
+                <div id="songInputs">
                 <input type="text" placeholder="Track Name" id="track">
                 <input type="text" placeholder="Artist Name (optional)" id="artist">
-
+                </div>
 
 
                 <div class="buttonbox">
@@ -106,7 +108,7 @@
             </div>
 
 
-            <div id="emotionsScore" class="col-2"></div>
+            <div id="emotionsScore" class="col-2 offset-1 smallerLeftMargin"><p>There will also be text here!</p></div>
 
 
         </div>

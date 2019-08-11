@@ -1,11 +1,73 @@
 body {
-    background: pink;
+    background: url("https://wallpaperset.com/w/full/6/4/c/5472.jpg") no-repeat center center fixed; 
     padding: 20px;
 }
+
+h1 {
+    text-align: center;
+    background-color: rgba(30, 28, 160, 0.4);
+    color: white;
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+h2 {
+    background-color: rgba(30, 28, 160, 0.5);
+    font-family: 'Blinker', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-left: 400px;
+    margin-right: 350px;
+    border-radius: 2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+h4 {
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(30, 28, 160, 0.5);
+    font-family: 'Blinker', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-left: 400px;
+    margin-right: 350px;
+    border-radius: 2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+  h5 {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgba(30, 28, 160);
+    padding: 3px;
+    margin: 30px;
+      
+  }
 
 #userText {
     width: 100%;
     height: 450px;
+    padding: 5px;
+    font-family: 'Blinker', sans-serif;
+    background-color: rgb(236,35,156, .3);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#wordFinderDiv {
+    color: white;
+    font-family: 'Blinker', sans-serif;
+    border-radius: 5px;
+    background-color: rgb(236,35,156, .3);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-size: 17px;
 }
 
 #wordInput {
@@ -17,11 +79,19 @@ body {
 }
 
 .bordered {
-    border: solid 1px black;
+    border: solid 1px white;
+}
+
+.topSpace {
+    margin-top: 8px;
 }
 
 #analyzeText {
     margin-bottom: 15px;
+}
+
+#graphDisplayWords {
+    font-size: 20px;
 }
 
 #graphDisplay {
@@ -35,7 +105,7 @@ body {
     text-align: center;
     padding: 15px;
     margin-bottom: 15px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     }
     
     #mychart {
@@ -55,8 +125,12 @@ body {
 }
 
 #track, #artist {
-    background-color: aqua;
-    
+    background-color: rgb(0, 255, 255);
+    text-align: center;
+}
+
+#songInputs {
+    margin-top: -20;
 }
 
 input {
@@ -66,10 +140,18 @@ input {
 
 #userLyricsAnalysis {
     padding-top: 130px;
+    background-color: rgb(255, 255, 255, .5);
+    height: 30em;
+    margin-top: 2em;
+    border-radius: 1em;
 }
 
 #emotionsScore {
     padding-top: 130px;
+    background-color: rgb(255, 255, 255, .5);
+    height: 30em;
+    margin-top: 2em;
+    border-radius: 1em;
 }
 
 #graphDisplay {
@@ -77,7 +159,6 @@ input {
     border-radius: 1em;
     margin-top: 2em;
     height: 30em;
-    display: inherit;
     justify-content: center;
   }
   
@@ -89,12 +170,57 @@ input {
     white-space: pre;
     overflow-y: scroll;
     height: 20em;
+    font-family: 'Blinker', sans-serif;
+    color: white;
+    background-color: rgba(30, 28, 160, 0.5);
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
 
   #lyricSpot {
-      padding-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    font-family: 'Blinker', sans-serif;
+    
   }
 
   #analysisPrompt {
-      margin-top: 10%;
+    padding-top: 80px;
+    text-align: center;
+    font-family: 'Blinker', sans-serif;
+}
+
+p {
+ text-align: center;   
+}
+
+  .smallerLeftMargin {
+      margin-left: 5%;
   }
+
+  button {
+    background-color:  rgba(87, 12, 83, 0.5);
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: 'Blinker', sans-serif;
+    border-radius: 5px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+  button:hover {
+    background-color:rgba(247, 3, 214, 0.6); /* pink */
+  }
+
