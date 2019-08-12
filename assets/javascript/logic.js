@@ -278,7 +278,7 @@ $(document).ready(function () {
     function synonymFinder() {
         var inputtedWord = $("#wordInput").val();
         console.log(inputtedWord)
-        var queryURL = "https://api.datamuse.com/words?ml=" + inputtedWord;
+        var queryURL = "https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?ml=" + inputtedWord;
         //$("#wordInput").val("");
         if (inputtedWord == "") {
             $("#myModal1").css("display", "block");
@@ -306,7 +306,7 @@ $(document).ready(function () {
     function adjectivesFinder() {
         var inputtedWord = $("#wordInput").val();
         console.log(inputtedWord)
-        var queryURL = "https://api.datamuse.com/words?rel_jjb=" + inputtedWord;
+        var queryURL = "https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?rel_jjb=" + inputtedWord;
         //$("#wordInput").val("");
         if (inputtedWord == "") {
             $("#myModal1").css("display", "block");
