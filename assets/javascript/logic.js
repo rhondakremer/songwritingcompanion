@@ -247,7 +247,7 @@ $(document).ready(function () {
     function rhymingWordsFinder() {
         var inputtedWord = $("#wordInput").val();
         console.log(inputtedWord)
-        var queryURL = "https://api.datamuse.com/words?rel_rhy=" + inputtedWord;
+        var queryURL = "https://cors-anywhere.herokuapp.com/https://api.datamuse.com/words?rel_rhy=" + inputtedWord;
         //$("#wordInput").val("");
         if (inputtedWord == "") {
             $("#myModal1").css("display", "block");
@@ -256,6 +256,7 @@ $(document).ready(function () {
             $.ajax({
                 url: queryURL,
                 method: "GET",
+                
 
 
             }).then(function (response) {
